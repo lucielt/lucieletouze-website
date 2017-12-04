@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Noe Display Regular';
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Regular.eot');
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noe Display Regular Italic';
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Regular-Italic.eot');
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Regular-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noe Display Medium';
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Medium.eot');
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Medium.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noe Display Medium Italic';
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Medium-Italic.eot');
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Medium-Italic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noe Display Bold';
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Bold.eot');
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Bold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noe Display Bold Italic';
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Bold-Italic.eot');
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Bold-Italic.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noe Display Black';
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Black.eot');
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noe Display Black Italic';
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Black-Italic.eot');
+    src: url('/Users/lucieletouze/Projets/Lucie/portfolio/2018/02_production/lucieletouze.com/public/font/Noe-Display-Black-Italic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
