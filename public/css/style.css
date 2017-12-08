@@ -2,25 +2,39 @@
     margin: 0;
     padding: 0;
     border: 0;
-}
-html {
-    height: 100%;
-}
-body {
     box-sizing: border-box;
-    font-size: 16px;
+}
+boby, html {
+    height: 100%;
+    font-size: 14px;
+}
+/*
+body {
+    font-family: 'Cairo', sans-serif;
+    box-sizing: border-box;
+    font-size: 14px;
     background-color: #fefefe;
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
+}*/
+h1 {
+    font-weight: 600;
+    /*letter-spacing: 0.1em;*/
+    font-size: 2.5em;
 }
-section {
-    width: 80%;
-    margin: auto;
-    padding-bottom: 2em;
-    /*text-align: center;*/
+h2 {
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 2em;
+    /*text-transform: uppercase;*/
+    margin-bottom: 1.5em;
+    margin-left: -1.5em;
+}
+h3 {
+    font-size: 1.2em;
 }
 a:link {
     text-decoration: none;
@@ -34,36 +48,49 @@ a:hover {
 a:active {
     text-decoration: underline;
 }
+img {
+    width: 100%;
+    height: auto;
+}
+.content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+header {
 
-h1 {
-    font-family: 'Noe Display Black';
-    /*letter-spacing: 0.1em;*/
-    font-size: 3em;
 }
-h2 {
-    font-family: 'Noe Display Black';
-    letter-spacing: 0.1em;
-    font-size: 2em;
-    /*text-transform: uppercase;*/
-    margin-bottom: 1.5em;
+section {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
-h3 {
-    font-size: 1.2em;
-}
+#about-intro  { height: 50%; }
+#experiences  { background-color: #445566; }
+#expertises   { background-color: #118866; }
 
-.Roboto-bold {
-    font-family: 'Roboto', sans-serif;
+.large-column {
+    position: relative;
+    width: 60%;
+    height: 56%;
+    margin: auto;
+    text-align: left;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #335599;
 }
-.about-date {
-    font-family: 'Noe Display Regular';
-    font-size: 0.9em;
-    font-weight: 400;
-    color: #303030;
+#intro-titre {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
-#bracket {
-    font-family: 'Roboto', sans-serif;
-        margin-right: -0.2em;
+.item-img {
+    width: 50%;
+    position: absolute;
 }
-.about-item {
-    margin-bottom: 1em;
+.items {
+    position: absolute;
 }
