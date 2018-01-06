@@ -172,6 +172,7 @@ section {
 .about-slidetext-titre {
 position: absolute;
 top: 50%;
+white-space: nowrap;
 -webkit-animation: animLeftSlideshow 16s linear infinite;
 -moz-animation: animLeftSlideshow 16s linear infinite;
 -ms-animation: animLeftSlideshow 16s linear infinite;
@@ -237,11 +238,11 @@ animation: animLeftSlideshow 16s linear infinite;
 }*/
 .angle_black {
     position: absolute;
-    z-index: 1;
-    top: -15%;
+    z-index: -1;
+    top: 83%;
     left: 0;
     width: 100%;
-    height: 25%;
+    height: 40%;
     content: '';
     -webkit-transform: skewY(5deg);
     -ms-transform: skewY(5deg);
@@ -255,6 +256,11 @@ animation: animLeftSlideshow 16s linear infinite;
     -webkit-transform: skewY(5deg);
     -ms-transform: skewY(5deg);
     transform: skewY(5deg);
+}
+.width_quarter {
+    width: 50%;
+    position: absolute;
+    right: 0;
 }
 /* animation lettre
 .ml12 .letter {
