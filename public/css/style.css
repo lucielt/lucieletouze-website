@@ -14,22 +14,35 @@ boby, html {
     color: #eef0f3;
 }
 .black {
-    color: #1a1b1f;
+    color: #00001d;
 }
-.violet {
-    color: #7983ce;
+.pink {
+    color: #ff6b67;
 }
 .bckg-grey {
     background-color: #eef0f3;
 }
 .bckg-black {
-    background-color: #1a1b1f;
+    background-color: #00001d;
     color: #eef0f3;
 }
 .bckg-violet {
     background-color: #7983ce;
 }
+.grad-pink {
+    background: linear-gradient(-90deg, #606060, #8c6371, #ff6b67, #bbcad2);
 
+}
+.grad-grey {
+    background: linear-gradient(-90deg, #606060, #bbcad2);
+
+}
+.svg-pink-gradient {
+    fill:url(#svg-pink-grad);
+}
+.svg-grey-gradient{
+    fill:url(#svg-grey-grad);
+}
 .bold {
     font-weight: 600;
 }
@@ -47,7 +60,10 @@ h2 {
     font-size: 1.4em;
 }
 h3 {
-    font-size: 2.5em;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 8%;
+    line-height: 1.2em;
 }
 a:link {
     text-decoration: none;
@@ -80,63 +96,123 @@ section {
     top: 0px;
     left: 0px;
 }
-.film_ratio {
+.film-ratio {
     height:56.25%;
 }
-.film_ratio_padding {
+.film-ratio-padding {
     padding: 5% 0;
     height: 66.25%;
 }
-.flex_row {
+.flex-row {
     display: flex;
     align-items: center;
 }
-.flex_row > div {
+.flex-row > div {
         flex: 1;
 }
-.flex_row .image_flex {
+.flex-row .image-flex {
     width: 50%;
 }
-.flex_row .middle_column {
+.flex-row .middle-column {
     flex: 1;
 }
-.flex_row .side_column {
+.flex-row .side-column {
     width: 25%;
     flex: unset;
+}
+.layout-columns {
+    display: block;
+    align-items: center;
+    height: auto;
+    padding: 3% 0;
 }
 .column {
     height: 100%;
     text-align: center;
     position: relative;
 }
-.sub_column {
+.layout-columns .column {
+    display: inline-block;
+    position: absolute;
+    width: 50%;
+    top: 0;
+}
+.layout-columns .three-column {
+    display: inline-block;
+    position: relative;
+    width: 33%;
+    top: 0;
+}
+.layout-columns .small-column-left {
+    width: 25%;
+}
+.layout-columns .medium-column-right {
+    width: 75%;
+    left: 25%;
+}
+.sub-column {
     width: 50%;
     text-align: left;
     margin: auto;
 }
-.center_height {
+.sub-column-text {
+    position: relative;
+    width: 75%;
+    text-align: left;
+    margin: auto;
+}
+.center-height {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
-.center_height h2:hover {
+.center-height h2:hover {
     transform: scale(1.02);
 }
-.bottom_align {
+.bottom-align {
     position: absolute;
     bottom: 16.66%;
     left: 50%;
     transform: translateX(-50%);
 }
-.center_height:hover + .bottom_align {
+.center-height:hover + .bottom-align {
     opacity: 0.1;
 }
-.image_container {
+.icon {
+    position: relative;
+    bottom: 0;
+    height: 100%;
+    display: inline-block;
+    margin-right: 5%;
+}
+.socials{
+    height: 8%;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 50%;
+    text-align: left;
+}
+.img-about-container {
+    height: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: auto; */
+    text-align: left;
+}
+.img-about {
+    position: relative;
+    top: 0;
+    height: 100%;
+}
+}
+.image-container {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
-.right_align {
+.right-align {
     float: right;
 }
 .decalage {
@@ -151,34 +227,48 @@ section {
     margin: 0 5%;
     z-index: 1;
 }
-.foreground .sub_column {
+.foreground .sub-column {
     width: 60%;
 }
 .about-slidetext-container {
-    position: relative;
+    position: absolute;
     display: block;
     width: 100%;
     height: 100%;
-    top: -100%;
+    top: 0;
 }
 .about-slidetext {
     position: relative;
     overflow: hidden;
     font-family: 'Rakkas', cursive;
-    font-size: 4vw;
-    height: 100%;
+    font-size: 4em;
+    letter-spacing: 0.1em;
+    line-height: 0.34;
+    height: 45%;
     width: 100%;
 }
 .about-slidetext-titre {
 position: absolute;
-top: 50%;
+/*top: 50%;*/
+bottom:0;
 white-space: nowrap;
+
 -webkit-animation: animLeftSlideshow 16s linear infinite;
 -moz-animation: animLeftSlideshow 16s linear infinite;
 -ms-animation: animLeftSlideshow 16s linear infinite;
 -o-animation: animLeftSlideshow 16s linear infinite;
 animation: animLeftSlideshow 16s linear infinite;
+
 }
+.letter{
+    font-size: 8em;
+    font-family: rakkas;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    opacity: 0.2;
+}
+
 /*
 .delay {
      animation-delay: 8s;
@@ -223,7 +313,7 @@ animation: animLeftSlideshow 16s linear infinite;
     }
 }
 /*
-.top_angle:before {
+.top-angle:before {
     position: absolute;
     z-index: -1;
     top: 0;
@@ -236,20 +326,57 @@ animation: animLeftSlideshow 16s linear infinite;
     transform: skewY(5deg);
     opacity: .012;
 }*/
-.angle_black {
+.logo_container{
+    position: relative;
+    height: 45%;
+    width: 100%;
+    top: 0;
+}
+.logo {
+    height: 50%;
     position: absolute;
-    z-index: -1;
-    top: 83%;
+    bottom: 0.5em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.img-logo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*text-align: center;*/
+}
+.img-logo.back {
+    top:1.5%;
+    left:1.5%;
+}
+.img-logo.front {
+    top:0%;
+    left:0%;
+}
+.angle-black {
+    position: absolute;
+    top: -15%;
     left: 0;
     width: 100%;
-    height: 40%;
+    height: 100%;
     content: '';
     -webkit-transform: skewY(5deg);
     -ms-transform: skewY(5deg);
     transform: skewY(5deg);
-    background-color: #1a1b1f;
 }
-.text_angle {
+.angle-grey {
+    position: absolute;
+    top: -30%;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    content: '';
+    -webkit-transform: skewY(5deg);
+    -ms-transform: skewY(5deg);
+    transform: skewY(5deg);
+    background-color: #eef0f3;
+}
+.text-angle {
     position: relative;
     left: 0;
     content: '';
@@ -257,11 +384,24 @@ animation: animLeftSlideshow 16s linear infinite;
     -ms-transform: skewY(5deg);
     transform: skewY(5deg);
 }
-.width_quarter {
+.width-quarter {
     width: 50%;
     position: absolute;
     right: 0;
 }
+.small-height {
+    height: 25%;
+}
+.middle-height {
+    height: 50%;
+}
+.medium-height {
+    height: 75%;
+}
+.background {
+    z-index: -1;
+}
+
 /* animation lettre
 .ml12 .letter {
   display: inline-block;
