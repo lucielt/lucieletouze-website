@@ -22,12 +22,18 @@ boby, html {
 .bckg-grey {
     background-color: #eef0f3;
 }
+.bckg-darker-grey{
+    background-color: #bbb5b9;
+}
 .bckg-black {
     background-color: #00001d;
     color: #eef0f3;
 }
-.bckg-violet {
-    background-color: #7983ce;
+.bckg-vert {
+    background-color: #415957;
+}
+.bckg-pink{
+    background-color: #d8bdc7;
 }
 .grad-pink {
     background: linear-gradient(-90deg, #606060, #8c6371, #ff6b67, #bbcad2);
@@ -45,6 +51,9 @@ boby, html {
 }
 .svg.black {
     fill:#00001d;
+}
+.svg.vert{
+    fill:#415957;
 }
 .svg.pink-gradient {
     fill:url(#svg-pink-grad);
@@ -115,6 +124,11 @@ section {
     display: flex;
     align-items: center;
 }
+#formation{
+    justify-content: flex-end;
+    align-items: center;
+    height: 50%;
+}
 .flex-row > div {
         flex: 1;
 }
@@ -154,14 +168,16 @@ section {
 .layout-columns .small-column-left {
     width: 25%;
 }
-.layout-columns .medium-column-right {
+.medium-column-right {
     width: 75%;
-    left: 25%;
+    display: flex;
+    align-items: center;
+    position: absolute;
 }
 .sub-column {
     width: 50%;
     text-align: left;
-    margin: auto;
+    /*margin: auto;*/
 }
 .sub-column-text {
     position: relative;
@@ -187,41 +203,58 @@ section {
     opacity: 0.1;
 }
 .icon {
+    /*
     position: relative;
     bottom: 0;
-    height: 100%;
     display: inline-block;
-    margin-right: 5%;
+    */
+    height: 100%;
+    margin-right: 2em;
 }
+/*
+.icon:hover {
+    height: 105%;
+}
+*/
 .socials{
     height: 8%;
     position: absolute;
     bottom: 0;
     left: 10%;
     width: 50%;
-    text-align: left;
+    /*text-align: left;*/
+    display: flex;
+    align-items: flex-start;
 }
 .img-about-container {
     height: 80%;
     position: absolute;
     top: 0;
     left: 0;
-    /* width: auto; */
+    width: 100%;
+    overflow: hidden;
     text-align: left;
 }
 .svg-img {
     height:100%;
     transform: scale(1);
     transition: scale 0.8s;
+    transition-timing-function: ease-in;
 }
 .svg {
     transition: fill 0.4s;
 }
 .svg-img:hover {
-    transform: scale(1.2);
+    transform: scale(1.25);
 }
 .svg-img:hover.svg.grey{
+    /*
+    //rouge
     fill: #ff6b67;
+    //marron
+    fill: #c47339;
+    */
+    fill: #d8bdc7;
 }
 .img-about {
     position: relative;
@@ -253,34 +286,48 @@ section {
     width: 60%;
 }
 .about-slidetext-container {
-    position: absolute;
+    position: relative;
     display: block;
     width: 100%;
-    height: 100%;
+    height: 45%;
     top: 0;
 }
-.about-slidetext {
-    position: relative;
-    overflow: hidden;
-    font-family: 'Rakkas', cursive;
-    font-size: 4em;
-    letter-spacing: 0.1em;
-    line-height: 0.34;
-    height: 45%;
-    width: 100%;
+
+.screen {
+    mix-blend-mode: screen;
 }
-.about-slidetext-titre {
-position: absolute;
-/*top: 50%;*/
-bottom:0;
-white-space: nowrap;
+.marquee {
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width: 100%;
+    font-family: 'Rakkas', cursive;
+    /* each letter will be 5% of the viewport width */
+    font-size: 4vw;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    overflow: hidden;
+    color: #eef0f3;
+}
 
--webkit-animation: animLeftSlideshow 16s linear infinite;
--moz-animation: animLeftSlideshow 16s linear infinite;
--ms-animation: animLeftSlideshow 16s linear infinite;
--o-animation: animLeftSlideshow 16s linear infinite;
-animation: animLeftSlideshow 16s linear infinite;
-
+@keyframes moveLeft {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-300vw);
+    }
+}
+.marquee span {
+    /* */
+    animation: moveLeft 50s linear infinite;
+    /* this ensure text stay all on the same line */
+    white-space: nowrap;
+    /* our spanis inline by default, so we out it block */
+    display: block;
+    /* this will let us add our animation */
+    position: relative;
+    bottom: -0.1em;
 }
 .letter{
     font-size: 8em;
@@ -289,50 +336,6 @@ animation: animLeftSlideshow 16s linear infinite;
     top: 25%;
     left: 35%;
     opacity: 0.2;
-}
-
-/*
-.delay {
-     animation-delay: 8s;
-}*/
-.delay {
-    -webkit-animation: animLeftSlideshow2 24s linear infinite;
-    -moz-animation: animLeftSlideshow2 24s linear infinite;
-    -ms-animation: animLeftSlideshow2 24s linear infinite;
-    -o-animation: animLeftSlideshow2 24s linear infinite;
-    animation: animLeftSlideshow2 24s linear infinite;
-}
-@keyframes animLeftSlideshow {
-    0% {
-    -webkit-transform: translate(100%, -50%);
-    -moz-transform: translate(100%%, -50%);
-    -ms-transform: translate(100%%, -50%);
-    -o-transform: translate(100%%, -50%);
-    transform: translate(100%%, -50%);
-    }
-    100%{
-    -webkit-transform: translate(-100%, -50%);
-    -moz-transform: translate(-100%, -50%);
-    -ms-transform: translate(-100%, -50%);
-    -o-transform: translate(-100%, -50%);
-    transform: translate(-100%, -50%);
-    }
-}
-@keyframes animLeftSlideshow2 {
-    0% {
-    -webkit-transform: translate(200%, -50%);
-    -moz-transform: translate(200%%, -50%);
-    -ms-transform: translate(200%%, -50%);
-    -o-transform: translate(200%%, -50%);
-    transform: translate(200%%, -50%);
-    }
-    100%{
-    -webkit-transform: translate(-100%, -50%);
-    -moz-transform: translate(-100%, -50%);
-    -ms-transform: translate(-100%, -50%);
-    -o-transform: translate(-100%, -50%);
-    transform: translate(-100%, -50%);
-    }
 }
 /*
 .top-angle:before {
@@ -349,17 +352,15 @@ animation: animLeftSlideshow 16s linear infinite;
     opacity: .012;
 }*/
 .logo_container{
-    position: relative;
     height: 45%;
     width: 100%;
-    top: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 .logo {
     height: 50%;
-    position: absolute;
-    bottom: 0.5em;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
 }
 .img-logo {
     position: absolute;
@@ -388,7 +389,7 @@ animation: animLeftSlideshow 16s linear infinite;
 }
 .angle-grey {
     position: absolute;
-    top: -75px;
+    top: -60px;
     left: 0;
     width: 100%;
     height: 150px;
@@ -396,7 +397,7 @@ animation: animLeftSlideshow 16s linear infinite;
     -webkit-transform: skewY(5deg);
     -ms-transform: skewY(5deg);
     transform: skewY(5deg);
-    background-color: #eef0f3;
+    background-color: #bbb5b9;
 }
 .text-angle {
     position: relative;
@@ -423,21 +424,86 @@ animation: animLeftSlideshow 16s linear infinite;
 .background {
     z-index: -1;
 }
-
-/* animation lettre
-.ml12 .letter {
-  display: inline-block;
-  line-height: 1em;
-}*/
-/*
-body {
-    font-family: 'Cairo', sans-serif;
-    box-sizing: border-box;
-    font-size: 14px;
-    background-color: #fefefe;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}*/
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+        transform: translateY(20px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    100% {
+        opacity:1;
+    }
+}
+.appear {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    /* make sure end state stays the same */
+    animation-fill-mode: forwards;
+}
+@media (max-width:640px) {
+    .flex-row {
+        flex-flow: column wrap;
+        align-items: stretch;
+    }
+    .angle-black {
+    height: 60%;
+    }
+    .flex-row .side-column {
+        width: 100%;
+        height: 30%;
+    }
+    .logo_container {
+        height: 70%;
+    }
+    .medium-height {
+        height: 35%;
+    }
+    .marquee {
+        /* reset our marquee back to his default position */
+        font-size: 2em;
+        position: relative;
+    }
+    .img-about-container {
+    display: none;
+    }
+    .about-slidetext-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+    }
+    .socials {
+        height: 25%;
+        width: 100%;
+        left: 0;
+    }
+    .icon {
+        margin-left: 30px;
+        margin-right: 0;
+    }
+    .middle-height{
+        height: 25%;
+    }
+    #formation{
+        height: auto;
+    }
+    .medium-column-right {
+        flex-flow: column;
+        position: relative;
+        width: 90%;
+    }
+    .sub-column-text {
+    width: 100%;
+    margin: 2em auto;
+    }
+    h3 {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 1em;
+    line-height: 1.2em;
+}
+    }
