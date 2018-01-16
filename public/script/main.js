@@ -40,3 +40,27 @@ anime.timeline({loop: true})
       return 100 + 30 * i;
     }
   });
+
+const scrollTagets = document.querySelectorAll('.three-column')
+console.log(scrollTagets)
+scrollTagets.forEach((scrollTaget, index) => {
+       // find element inside section vs inside the page
+       const scrollLinks = scrollTaget.querySelectorAll('.js-scroll');
+       console.log(scrollLinks)
+       scrollLinks.forEach(link => {
+          link.addEventListener('click', (event) => {
+              //using event keyword = get a snapshot on what happen
+              console.log(event)
+
+              //will block the natural browser behavior of jumping to another link
+              event.preventDefault();
+              //get href attribute of the link
+              const href = link.getAttribute('href')
+              console.log(href);
+              //use href to scroll smoothly into it
+              document.querySelector(href).scrollIntoView({
+                  behavior:'smooth'
+              });
+          });
+      });
+});

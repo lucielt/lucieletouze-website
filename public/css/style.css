@@ -78,10 +78,10 @@ h2 {
     font-size: 1.4em;
 }
 h3 {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 400;
-    margin-bottom: 8%;
     line-height: 1.2em;
+    font-family: rakkas;
 }
 a:link {
     text-decoration: none;
@@ -104,7 +104,6 @@ img {
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
 }
 header {
 
@@ -127,11 +126,6 @@ section {
     display: flex;
     align-items: center;
 }
-#formation{
-    justify-content: flex-end;
-    align-items: center;
-    height: 50%;
-}
 .flex-row > div {
         flex: 1;
 }
@@ -144,6 +138,7 @@ section {
 .flex-row .side-column {
     width: 25%;
     flex: unset;
+    height: 100%;
 }
 .layout-columns {
     display: block;
@@ -162,20 +157,91 @@ section {
     width: 50%;
     top: 0;
 }
-.layout-columns .three-column {
-    display: inline-block;
+.three-column {
+    height: 100%;
+width: 100%;
+position: relative;
+display: flex;
+display: flex;
+flex-flow: column nowrap;
+flex: 1 0 auto;
+align-items: center;
+/* top: 0; */
+}
+.three-column:nth-of-type(2){
+    background-color: #eef0f3;
+}
+.three-column:nth-of-type(3){
+    background-color: #eef0f3;
+}
+.arrow-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+.scroll-to{
+    width: 50%;
+    /*
+    height: 35%;
+    color: #455857;
+    */
+    display: flex;
+    font-size: 1.5em;
+    justify-content: flex-start;
     position: relative;
-    width: 33%;
+    margin: auto;
+    top:0;
+    transition: top 0.5s;
+}
+.scroll-to:hover{
+    color: #000;
+    top:20%;
+}
+.scroll-top {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    color: #455857;
+    justify-content: flex-start;
+    position: relative;
+    margin: auto;
     top: 0;
+    transition: top 0.5s;
+}
+.scroll-top:hover {
+    top:-20%;
+}
+.scroll-top span{
+    line-height: 1;
+    font-size: 1.5em;
+    position: relative;
+    bottom: 3px;
+}
+.scroll-top p{
+    font-size: 0.8em;
+}
+.scroll-to a, .scroll-top a{
+    color: #d8bdc7;
+}
+.scroll-to a:hover, .scroll-top a:hover{
+    text-decoration: none;
+    color: #455857;
 }
 .layout-columns .small-column-left {
     width: 25%;
 }
 .medium-column-right {
-    width: 75%;
-    display: flex;
-    align-items: center;
-    position: absolute;
+    width: 100%;
+height: 75%;
+display: flex;
+flex-flow: column nowrap;
+/* align-items: center; */
+/* flex-grow: 1; */
+/* justify-content: center; */
+/* position: absolute; */
+/* top: 0; */
+overflow: scroll;
 }
 .sub-column {
     width: 50%;
@@ -184,9 +250,13 @@ section {
 }
 .sub-column-text {
     position: relative;
-    width: 75%;
+    height: 70%;
+    width: 50%;
     text-align: left;
     margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
 }
 .center-height {
     position: relative;
@@ -391,23 +461,31 @@ section {
     -ms-transform: skewY(5deg);
     transform: skewY(5deg);
 }
+.section-angle {
+    position: absolute;
+    height: 25%;
+    width: 100%;
+    bottom: 0;
+    overflow: hidden;
+}
 .angle-container {
     bottom: 0;
     position: absolute;
-    height: 15%;
+    height: 100%;
     width: 100%;
-        z-index: 10;
+    z-index: 10;
 }
 .angle-pink {
     position: relative;
-    top: -35%;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 150%;
+    height: 100%;
     content: '';
     -webkit-transform: skewY(5deg);
     -ms-transform: skewY(5deg);
     transform: skewY(5deg);
+    transform-origin: 0;
     background-color: #d4bec7;
 }
 .text-angle {
@@ -466,8 +544,8 @@ section {
     .angle-black {
     height: 100%;
     }
-    .angle-container {
-    height: 10%;
+    .section-angle {
+    height: 20%;
     }
     .flex-row .side-column {
         display: none;
@@ -510,9 +588,11 @@ section {
         height: auto;
     }
     .medium-column-right {
+        width: 100%;
+        height: 100%;
+        display: flex;
         flex-flow: column;
-        position: relative;
-        width: 90%;
+        align-items: center;
     }
     .sub-column-text {
     width: 100%;
