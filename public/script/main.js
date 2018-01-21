@@ -45,22 +45,69 @@ const scrollTagets = document.querySelectorAll('.three-column')
 console.log(scrollTagets)
 scrollTagets.forEach((scrollTaget, index) => {
        // find element inside section vs inside the page
-       const scrollLinks = scrollTaget.querySelectorAll('.js-scroll');
-       console.log(scrollLinks)
-       scrollLinks.forEach(link => {
-          link.addEventListener('click', (event) => {
-              //using event keyword = get a snapshot on what happen
-              console.log(event)
+      console.log(scrollTaget)
+    const scrollLinks = scrollTaget.querySelectorAll('.js-scroll');
+    const scrollSide = scrollTaget.querySelectorAll('.js-side-scroll');
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            console.log(event)
+            event.preventDefault();
+            const href = link.getAttribute('href')
+            const id = link.getAttribute('data-name')
+            console.log(href);
+            document.querySelector(href).scrollIntoView({
+                behavior:'smooth'
 
-              //will block the natural browser behavior of jumping to another link
-              event.preventDefault();
-              //get href attribute of the link
-              const href = link.getAttribute('href')
-              console.log(href);
-              //use href to scroll smoothly into it
-              document.querySelector(href).scrollIntoView({
-                  behavior:'smooth'
-              });
-          });
-      });
+            });
+            var  intElemScrollTop = document.querySelector(href).scrollTop;
+
+            //const hrefImg = href + "-img"
+            const hrefImg = "#" + id + "-img"
+            console.log(hrefImg);
+            const hrefImgId = document.querySelector(hrefImg)
+            console.log('alllo' + hrefImgId);
+            const hrefImgLink = hrefImgId.querySelector('.js-side-scroll')
+            console.log(hrefImgLink);
+            //hrefImgLink.click();
+        });
+    });
+    /*
+    scrollSide.forEach(side => {
+        side.addEventListener('click', (event) => {
+            event.preventDefault();
+            const hrefSide = side.getAttribute('href')
+            console.log('c qui' + hrefSide);
+            document.querySelector(hrefSide).scrollIntoView({
+                behavior:'smooth'
+
+            });
+        });
+    });
+    */
 });
+
+/*
+var hrefImgId = hrefImg;
+while(hrefImgId.charAt(0) === '#'){
+    hrefImgId = hrefImgId.substr(1);
+}
+const sideScroll = hrefImgId.querySelector('.js-side-scroll');
+console.log(sideScroll)
+sideScroll.forEach(side => {
+
+        const hrefSide = side.getAttribute('href')
+        console.log(hrefSide);
+        console.log('allo' + document.querySelector(hrefSide));
+        document.querySelector(hrefSide).scrollIntoView({
+            behavior:'smooth'
+        });
+});
+
+-----
+if(hrefImg === "#formation-img"){
+document.querySelector(hrefImg).style.top="0";
+}else if(hrefImg === "#experience-img"){
+document.querySelector(hrefImg).style.top="100%";
+}else if(hrefImg === "#other-img"){
+document.querySelector(hrefImg).style.top="200%";
+}*/
